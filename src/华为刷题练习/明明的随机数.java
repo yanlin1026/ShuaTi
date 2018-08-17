@@ -27,7 +27,7 @@ public class 明明的随机数 {
         Set<Integer> set = new TreeSet<>();
         while(scan.hasNext()){
             int n = scan.nextInt();
-            set.clear(); //清空set集合
+            set.clear(); // 清空set集合
             for(int i=0;i<n;i++){
                 set.add(scan.nextInt());
             }
