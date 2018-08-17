@@ -14,7 +14,7 @@ public class 排序Utils {
         System.out.println();
     }
 
-    public static void 交换(int[] a, int i, int j) {
+    public static void swap(int[] a, int i, int j) {
         int tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
@@ -24,7 +24,7 @@ public class 排序Utils {
         for (int i = 0; i < a.length; i++) {
             for (int j = a.length - 1; j > i; j--) {
                 if (a[j] < a[j - 1]) {
-                    交换(a, j, j - 1);
+                    swap(a, j, j - 1);
                 }
             }
         }
@@ -45,7 +45,7 @@ public class 排序Utils {
                     minIndex = j;
                 }
             }
-            交换(a, i, minIndex);
+            swap(a, i, minIndex);
         }
         display(a);
     }
@@ -61,7 +61,7 @@ public class 排序Utils {
         for (int i = 1; i <= a.length - 1; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 if (a[j] > a[j + 1]) {
-                    交换(a, j, j + 1);
+                    swap(a, j, j + 1);
                 }
             }
         }
@@ -80,9 +80,9 @@ public class 排序Utils {
         int more = a.length;
         while (i < more) {
             if (a[i] < num) {
-                交换(a, ++less, i++);
+                swap(a, ++less, i++);
             } else if (a[i] > num) {
-                交换(a, i, --more);
+                swap(a, i, --more);
             } else {
                 i++;
             }
@@ -105,7 +105,7 @@ public class 排序Utils {
                 i++;
             }
             if (i < j) {
-                交换(a, i, j);
+                swap(a, i, j);
             }
         }
         //基数tmp归位
