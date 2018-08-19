@@ -6,6 +6,10 @@ package 排序;
  */
 public class 排序Utils {
 
+    /**
+     * 打印数组
+     * @param a
+     */
     public static void display(int[] a) {
 
         for (int i : a) {
