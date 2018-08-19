@@ -4,14 +4,15 @@ package 排序;
  * @author yanlin
  * @date 2018/8/17 下午4:51
  */
-public class 排序Utils {
+public class SortUtil {
 
     /**
      * 打印数组
      * @param a
+     * @param description
      */
-    public static void display(int[] a) {
-
+    public static void display(String description,int[] a) {
+        System.out.print(description);
         for (int i : a) {
             System.out.print(i + " ");
         }
@@ -32,7 +33,7 @@ public class 排序Utils {
                 }
             }
         }
-        display(a);
+        display("",a);
     }
 
     /**
@@ -51,7 +52,7 @@ public class 排序Utils {
             }
             swap(a, i, minIndex);
         }
-        display(a);
+        display("",a);
     }
 
     /**
@@ -69,7 +70,7 @@ public class 排序Utils {
                 }
             }
         }
-        display(a);
+        display("",a);
     }
 
     /**
@@ -91,7 +92,7 @@ public class 排序Utils {
                 i++;
             }
         }
-        display(a);
+        display("",a);
     }
 
     public static void quickSort(int[] a, int left, int right) {
