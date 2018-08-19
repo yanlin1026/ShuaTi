@@ -1,5 +1,6 @@
 package 排序;
 
+import static Utils.Utils.display;
 import static 排序.SortUtil.*;
 
 

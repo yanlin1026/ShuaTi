@@ -1,5 +1,8 @@
 package 真题练习;
 
+import static Utils.Utils.display;
+import static com.sun.glass.ui.gtk.GtkApplication.display;
+
 /**
  * Created with IntelliJ IDEA.
  * User: yanlin
@@ -13,40 +16,35 @@ public class 背包问题 {
         int m = 12; //背包容量
         int n = val.length; //物品个数
 
-        int[][] f = new int[n + 1][m + 1]; //f[i][j]表示前i个物品能装入容量为j的背包中的最大价值
+        int[][] dp = new int[n + 1][m + 1]; //dp[i][j]表示前i个物品能装入容量为j的背包中的最大价值
         int[][] path = new int[n + 1][m + 1];
         //初始化第一列和第一行
-        for (int i = 0; i < f.length; i++) {
-            f[i][0] = 0;
+        for (int i = 0; i < dp.length; i++) {
+            dp[i][0] = 0;
         }
-        for (int i = 0; i < f[0].length; i++) {
-            f[0][i] = 0;
+        for (int i = 0; i < dp[0].length; i++) {
+            dp[0][i] = 0;
         }
         //通过公式迭代计算
-        for (int i = 1; i < f.length; i++) {
-            for (int j = 1; j < f[0].length; j++) {
+        for (int i = 1; i < dp.length; i++) {
+            for (int j = 1; j < dp[0].length; j++) {
                 if (weight[i - 1] > j)
-                    f[i][j] = f[i - 1][j];
+                    dp[i][j] = dp[i - 1][j];
                 else {
-                    if (f[i - 1][j] < f[i - 1][j - weight[i - 1]] + val[i - 1]) {
-                        f[i][j] = f[i - 1][j - weight[i - 1]] + val[i - 1];
+                    if (dp[i - 1][j] < dp[i - 1][j - weight[i - 1]] + val[i - 1]) {
+                        dp[i][j] = dp[i - 1][j - weight[i - 1]] + val[i - 1];
                         path[i][j] = 1;
                     } else {
-                        f[i][j] = f[i - 1][j];
+                        dp[i][j] = dp[i - 1][j];
                     }
-                    //f[i][j] = Math.max(f[i-1][j], f[i-1][j-weight[i-1]]+val[i-1]);
+                    //dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i-1]]+val[i-1]);
                 }
             }
         }
-        for (int i = 0; i < f.length; i++) {
-            for (int j = 0; j < f[0].length; j++) {
-                System.out.print(f[i][j] + "\t");
-            }
-            System.out.println();
-        }
+        display("dp数组为：",dp);
 
-        int i = f.length - 1;
-        int j = f[0].length - 1;
+        int i = dp.length - 1;
+        int j = dp[0].length - 1;
         while (i > 0 && j > 0) {
             if (path[i][j] == 1) {
                 System.out.print("第" + i + "个物品装入 ");

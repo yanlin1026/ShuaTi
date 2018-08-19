@@ -1,7 +1,8 @@
 package 排序;
 
-import static 排序.SortUtil.display;
-import static 排序.SortUtil.swap;
+import static Utils.Utils.display;
+import static Utils.Utils.swap;
+
 
 /**
  * Created with IntelliJ IDEA.
