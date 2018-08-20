@@ -1,24 +1,15 @@
 package 排序;
 
+import static Utils.Utils.display;
+import static Utils.Utils.swap;
+
 /**
  * @author yanlin
  * @date 2018/8/17 下午4:51
  */
-public class 排序Utils {
+public class SortUtil {
 
-    public static void display(int[] a) {
 
-        for (int i : a) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-    }
-
-    public static void swap(int[] a, int i, int j) {
-        int tmp = a[i];
-        a[i] = a[j];
-        a[j] = tmp;
-    }
 
     public static void bubbleSort(int[] a) {
         for (int i = 0; i < a.length; i++) {
@@ -28,7 +19,7 @@ public class 排序Utils {
                 }
             }
         }
-        display(a);
+        display("",a);
     }
 
     /**
@@ -47,7 +38,7 @@ public class 排序Utils {
             }
             swap(a, i, minIndex);
         }
-        display(a);
+        display("",a);
     }
 
     /**
@@ -65,7 +56,7 @@ public class 排序Utils {
                 }
             }
         }
-        display(a);
+        display("",a);
     }
 
     /**
@@ -87,7 +78,7 @@ public class 排序Utils {
                 i++;
             }
         }
-        display(a);
+        display("",a);
     }
 
     public static void quickSort(int[] a, int left, int right) {
