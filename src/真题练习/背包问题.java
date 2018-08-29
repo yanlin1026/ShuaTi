@@ -1,6 +1,7 @@
 package 真题练习;
 
 import static Utils.Utils.display;
+import static com.sun.glass.ui.gtk.GtkApplication.display;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,26 +37,18 @@ public class 背包问题 {
                     } else {
                         dp[i][j] = dp[i - 1][j];
                     }
-//                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i-1]]+val[i-1]);
-//                    path[i][j] = 1;
+                    //dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i-1]]+val[i-1]);
                 }
             }
         }
-        display("dp数组为：", dp);
-        display("dp数组为：", path);
+        display("dp数组为：",dp);
 
         int i = dp.length - 1;
         int j = dp[0].length - 1;
-        int value = 0;
-        int wei = 0;
         while (i > 0 && j > 0) {
             if (path[i][j] == 1) {
-                System.out.print("第" + i + "个物品装入 " + "价值：");
-                value += val[i - 1];
-                System.out.print(value + " 重量:");
-                System.out.println(wei += weight[i - 1]);
+                System.out.print("第" + i + "个物品装入 ");
                 j -= weight[i - 1];
-
             }
             i--;
         }
