@@ -28,9 +28,9 @@ public class 背包问题 {
         //通过公式迭代计算
         for (int i = 1; i < dp.length; i++) {
             for (int j = 1; j < dp[0].length; j++) {
-                if (weight[i - 1] > j)
+                if (weight[i - 1] > j) {
                     dp[i][j] = dp[i - 1][j];
-                else {
+                } else {
                     if (dp[i - 1][j] < dp[i - 1][j - weight[i - 1]] + val[i - 1]) {
                         dp[i][j] = dp[i - 1][j - weight[i - 1]] + val[i - 1];
                         path[i][j] = 1;
@@ -41,7 +41,7 @@ public class 背包问题 {
                 }
             }
         }
-        display("dp数组为：",dp);
+        display("dp数组为：", dp);
 
         int i = dp.length - 1;
         int j = dp[0].length - 1;

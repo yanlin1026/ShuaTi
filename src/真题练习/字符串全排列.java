@@ -2,9 +2,9 @@ package 真题练习;
 
 /**
  * Created with IntelliJ IDEA.
- * User: yanlin
  * Date: 2018/8/19 23:13
  * Description:字符串09:23-23:50
+ * @author yanlin
  */
 public class 字符串全排列 {
 
@@ -21,7 +21,7 @@ public class 字符串全排列 {
      * @param c
      * @param from
      * @param to
-     * @Description: 字符串09:23-23:50
+     * @description: 字符串09:23-23:50
      *
      */
     public static void 字符串全排列(char[] c, int from, int to) {
@@ -42,7 +42,7 @@ public class 字符串全排列 {
      * @param c
      * @param from
      * @param to
-     * @Description: 字符串24:00-
+     * @description: 字符串24:00-
      */
     public static void 字符串包含重复数字全排列(char[] c, int from, int to) {
         if (from == to) {
@@ -55,8 +55,9 @@ public class 字符串全排列 {
         for (int i = from; i <= to; i++) {
 
 
-            if (isSwap(c, from, i) == false)
+            if (isSwap(c, from, i) == false){
                 continue;
+            }
             字符交换(c, i, from);
             字符串包含重复数字全排列(c, from + 1, to);
             字符交换(c, i, from);
