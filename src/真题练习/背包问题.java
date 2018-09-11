@@ -1,7 +1,6 @@
 package 真题练习;
 
 import static Utils.Utils.display;
-import static com.sun.glass.ui.gtk.GtkApplication.display;
 
 /**
  * Created with IntelliJ IDEA.

@@ -13,14 +13,18 @@ import static Utils.Utils.swap;
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] arr = {5, 3, 7, 8, 4, 2, 6, 1};
+        int[] arr = {5,11,7,2,3,17};
         //建堆之后第一个元素必为改数组最大的元素
         heapSort(arr);
         display("heapSort：", arr);
     }
 
     public static void heapSort(int[] arr) {
-        heapInsert(arr);
+        //将arr建成大根堆
+        for (int i = 0; i < arr.length; i++) {
+            heapInsert(arr, i);
+            display(arr);
+        }
         display("建堆后：", arr);
         int size = arr.length;
         swap(arr, 0, --size);
@@ -37,12 +41,10 @@ public class HeapSort {
      *          建堆--大根堆每个节点都是最大的数
      *          时间复杂度为：O(N)
      */
-    public static void heapInsert(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            while (a[i] > a[(i - 1) / 2]) {
-                swap(a, i, (i - 1) / 2);
-                i = (i - 1) / 2;
-            }
+    public static void heapInsert(int[] a, int index) {
+        while (a[index] > a[(index - 1) / 2]) {
+            swap(a, index, (index - 1) / 2);
+            index = (index - 1) / 2;
         }
     }
 
