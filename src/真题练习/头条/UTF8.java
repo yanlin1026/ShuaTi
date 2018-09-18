@@ -16,7 +16,6 @@ public class UTF8 {
         ArrayList<Byte> arrayList = new ArrayList<>();
         for(int i = 0;i<strings.length;i++){
             strings[i] = in.nextInt();
-
             arrayList.add(Byte.parseByte(String.valueOf(strings[i])));
         }
 
