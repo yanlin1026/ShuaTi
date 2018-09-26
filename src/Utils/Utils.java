@@ -1,7 +1,7 @@
 package Utils;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
@@ -84,6 +84,45 @@ public class Utils {
             }
             System.out.println();
         }
+    }
+
+    /**
+     * 输出n*m的二维数组
+     *
+     * @return
+     */
+    public static int[][] inputArray() {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int[][] arr = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = in.nextInt();
+            }
+        }
+        return arr;
+    }
+
+    public static int[] inputSingleArray() {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+
+        }
+        return arr;
+    }
+    public static ArrayList<Integer> inputSingleArrayList() {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            arrayList.add(in.nextInt());
+
+        }
+        return arrayList;
     }
 
 }
