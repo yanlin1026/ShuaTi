@@ -23,7 +23,6 @@ public class HeapSort {
         //将arr建成大根堆
         for (int i = 0; i < arr.length; i++) {
             heapInsert(arr, i);
-            display(arr);
         }
         display("建堆后：", arr);
         int size = arr.length;
